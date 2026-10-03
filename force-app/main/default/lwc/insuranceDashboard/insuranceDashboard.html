@@ -1,0 +1,80 @@
+<template>
+    <lightning-card title="Insurance Dashboard" icon-name="standard:insurance_policy">
+        <lightning-button
+    slot="actions"
+    label="Refresh"
+    icon-name="utility:refresh"
+    onclick={handleRefresh}
+    disabled={isLoading}>
+</lightning-button>
+<template if:true={refreshMessage}>
+    <div class="slds-text-align_right slds-p-right_small slds-p-top_x-small">
+        {refreshMessage}
+    </div>
+</template>
+        <div class="slds-p-around_medium">
+            <div class="slds-grid slds-wrap slds-gutters">
+
+    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+        <div class="slds-box slds-m-bottom_small">
+            <h2 class="slds-text-heading_medium">Total Policies</h2>
+            <p class="slds-text-heading_large">{policyCount}</p>
+        </div>
+    </div>
+
+    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+        <div class="slds-box slds-m-bottom_small">
+            <h2 class="slds-text-heading_medium">Total Claims</h2>
+            <p class="slds-text-heading_large">{claimCount}</p>
+        </div>
+    </div>
+
+    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+        <div class="slds-box slds-m-bottom_small">
+            <h2 class="slds-text-heading_medium">Total Premium</h2>
+            <p class="slds-text-heading_large">₹ {totalPremium}</p>
+        </div>
+    </div>
+
+    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+        <div class="slds-box slds-m-bottom_small">
+            <h2 class="slds-text-heading_medium">Total Claim Amount</h2>
+            <p class="slds-text-heading_large">₹ {totalClaimAmount}</p>
+        </div>
+    </div>
+
+</div>
+            <div class="slds-box slds-m-top_small">
+                <h2 class="slds-text-heading_medium">Claim Status Summary</h2>
+
+                    <p>New: {claimStatusCounts.New}</p>
+                    <p>Submitted for Approval: {claimStatusCounts.SubmittedForApproval}</p>
+                    <p>Approved: {claimStatusCounts.Approved}</p>
+                    <p>Rejected: {claimStatusCounts.Rejected}</p>
+            </div>
+            <div class="slds-box slds-m-top_small">
+                <h2 class="slds-text-heading_medium">Recent Policies</h2>
+
+                <template for:each={policies} for:item="policy">
+                    <div key={policy.Id} class="slds-p-around_small slds-border_bottom">
+                        <p><strong>{policy.Name}</strong></p>
+                        <p>Premium: ₹ {policy.Premium__c}</p>
+                        <p>State: {policy.Policy_State__c}</p>
+                        <p>Start Date: {policy.Policy_Start_Date__c}</p>
+                    </div>
+                </template>
+            </div>
+            <div class="slds-box slds-m-top_small">
+                <h2 class="slds-text-heading_medium">Recent Claims</h2>
+
+                <template for:each={claims} for:item="claim">
+                    <div key={claim.Id} class="slds-p-around_small slds-border_bottom">
+                        <p><strong>{claim.Name}</strong></p>
+                        <p>Claim Amount: ₹ {claim.Claim_Amount__c}</p>
+                        <p>Status: {claim.Approval_Status__c}</p>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </lightning-card>
+</template>

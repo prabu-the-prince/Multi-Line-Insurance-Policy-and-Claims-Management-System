@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>Policy__c</members>
+        <members>Claim__c</members>
+        <name>CustomObject</name>
+    </types>
+
+    <types>
+        <members>PremiumCalculator</members>
+        <members>ClaimsAdjusterController</members>
+        <members>ClaimsAdjusterControllerTest</members>
+        <members>InsuranceDashboardController</members>
+        <name>ApexClass</name>
+    </types>
+
+    <types>
+        <members>AutoQuotingFlow</members>
+        <members>Claim_Routing_Flow</members>
+        <members>Auto_Submit_High_Value_Claim</members>
+        <members>Approver_Claim_Decision_Flow</members>
+        <name>Flow</name>
+    </types>
+
+    <types>
+        <members>Claim__c.Claim_Approval_Process</members>
+        <members>Claim__c.High_Value_Claim_Approval</members>
+        <name>ApprovalProcess</name>
+    </types>
+
+    <types>
+        <members>Insurance_Claims_User</members>
+        <members>Insurance_Agent</members>
+        <members>Insurance_Adjuster</members>
+        <members>Insurance_Manager</members>
+        <name>PermissionSet</name>
+    </types>
+
+    <types>
+        <members>Auto_Claims_Queue</members>
+        <members>Property_Claims_Queue</members>
+        <members>Life_Claims_Queue</members>
+        <name>Queue</name>
+    </types>
+
+    <types>
+        <members>California_Insurance_Team</members>
+        <members>Texas_Insurance_Team</members>
+        <name>Group</name>
+    </types>
+
+    <types>
+        <members>Claim__c-Claim Layout</members>
+        <members>Policy__c-Policy Layout</members>
+        <name>Layout</name>
+    </types>
+
+    <types>
+        <members>Policy__c</members>
+        <members>Claim__c</members>
+        <name>CustomTab</name>
+    </types>
+
+    <types>
+        <members>insuranceDashboard</members>
+        <name>FlexiPage</name>
+    </types>
+
+    <types>
+        <members>claimsDashboardLwc</members>
+        <members>claimTileLwc</members>
+        <members>insuranceDashboard</members>
+        <name>LightningComponentBundle</name>
+    </types>
+
+    <version>67.0</version>
+</Package>
